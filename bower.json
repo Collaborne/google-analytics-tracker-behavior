@@ -12,7 +12,7 @@
     "analytics"
   ],
   "license": "Apache 2",
-  "homepage": "https://github.com/collaborne/google-analytics-tracker-behavior",
+  "homepage": "https://github.com/Collaborne/google-analytics-tracker-behavior",
   "ignore": [
     "**/.*"
   ],
