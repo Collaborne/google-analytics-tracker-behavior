@@ -37,6 +37,10 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/linker
 	 */
 	gaSetDomainName: function(domainName) {
+		if (!ga) {
+			throw new Error('Google Analytics is not initialized. Call first gaCreate()');
+		}
+
 		ga('require', 'linker');
 		ga('linker:autoLink', [domainName]);
 	},
@@ -47,6 +51,10 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
 	 */
 	gaSetDimension: function(dimension, value) {
+		if (!ga) {
+			throw new Error('Google Analytics is not initialized. Call first gaCreate()');
+		}
+
 		ga('set', dimension, value);
 	},
 
@@ -56,6 +64,10 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/linker
 	 */
 	gaTrackPageView: function(url) {
+		if (!ga) {
+			throw new Error('Google Analytics is not initialized. Call first gaCreate()');
+		}
+
 		ga('send', 'pageview', url);
 	},
 
@@ -65,6 +77,10 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/events
 	 */
 	gaTrackEvent: function(category, action, label) {
+		if (!ga) {
+			throw new Error('Google Analytics is not initialized. Call first gaCreate()');
+		}
+
 		ga('send','event', category, action, label);
 	}
 };
