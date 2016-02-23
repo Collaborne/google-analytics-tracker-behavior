@@ -13,22 +13,27 @@
 
     <body>
         <template is="dom-bind">
-            <div class="vertical-section vertical-section-container centered">
-                <simple-tracker id="tracker" account-id="[[accountId]]"></simple-tracker>
+            <simple-tracker id="tracker" account-id="[[accountId]]"></simple-tracker>
 
+            <div class="vertical-section vertical-section-container centered">
                 <paper-input value="{{accountId}}" label="Account ID"></paper-input>
                 <paper-button on-tap="_connect">Connect</paper-button>
+            </div>
+
+            <div class="vertical-section vertical-section-container centered">
+                <paper-input value="{{page}}" label="Page URL"></paper-input>
                 <paper-button on-tap="_trackPageView">Track URL</paper-button>
             </div>
         </template>
 
     	<script>
     		var scope = document.querySelector('template[is=dom-bind]');
+            scope.page = 'test/index.html';
     		scope._connect = function() {
     			scope.$.tracker.gaCreate(this.accountId);
     		};
             scope._trackPageView = function() {
-                scope.$.tracker.gaTrackPageView("test/foo");
+                scope.$.tracker.gaTrackPageView(scope.page);
             }
     	</script>
     </body>
