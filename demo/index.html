@@ -13,16 +13,19 @@
 
     <body>
         <template is="dom-bind">
-            <simple-tracker id="tracker" account-id="[[accountId]]"></simple-tracker>
+            <simple-tracker id="tracker" account-id="[[accountId]]" ga-initialized="{{initialized}}"></simple-tracker>
 
             <div class="vertical-section vertical-section-container centered">
                 <paper-input value="{{accountId}}" label="Account ID"></paper-input>
                 <paper-button on-tap="_connect">Connect</paper-button>
+                <div>
+                    Tracker is initialized: [[initialized]]
+                </div>
             </div>
 
             <div class="vertical-section vertical-section-container centered">
                 <paper-input value="{{page}}" label="Page URL"></paper-input>
-                <paper-button on-tap="_trackPageView">Track URL</paper-button>
+                <paper-button on-tap="_trackPageView" disabled="[[!initialized]]">Track URL</paper-button>
             </div>
         </template>
 
