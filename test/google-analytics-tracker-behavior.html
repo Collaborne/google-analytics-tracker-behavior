@@ -34,6 +34,11 @@
 					test('can create element', function() {
 						expect(element).to.not.be.undefined;
 					});
+
+					test('gaCreate sets gaInitialized', function() {
+						element.gaCreate('test');
+						expect(element.gaInitialized).to.be.true;
+					});
 				});
 			});
 		</script>

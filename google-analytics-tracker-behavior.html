@@ -18,7 +18,8 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 		gaInitialized: {
 			type: Boolean,
 			notify: true,
-			value: false
+			value: false,
+			readOnly: true
 		}
 	},
 
@@ -36,7 +37,7 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		this.gaInitialized = true;
+		this._setGaInitialized(true);
 
 		ga('create', accountId, 'auto', {
 			allowLinker: true,
