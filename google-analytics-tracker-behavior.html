@@ -86,6 +86,21 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 	},
 
 	/**
+	 * Informs GA about the user ID of the viewer
+	 *
+	 * @param  {String} userId ID of the viewer
+	 *
+	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id
+	 */
+	gaSetUserId: function(userId) {
+		if (!this.gaInitialized) {
+			throw new Error('Google Analytics is not initialized. Call first gaCreate()');
+		}
+
+		ga('set', 'userId', userId);
+	},
+
+	/**
 	 * Tracks an event
 	 *
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/events
