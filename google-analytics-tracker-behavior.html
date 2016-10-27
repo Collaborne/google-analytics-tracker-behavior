@@ -11,16 +11,15 @@ var Polymer = Polymer || {};
  * @demo demo/index.html
  */
 Polymer.GoogleAnalyticsTrackerBehavior = {
-	properties: {
-		/**
-		 * True if Google Analytics was initialized
-		 */
-		gaInitialized: {
-			type: Boolean,
-			notify: true,
-			value: false,
-			readOnly: true
-		}
+	/**
+	 * Global flag if Google Analytics was initialized.
+	 * Although multiple elements might use this behavior, GA should be initialized
+	 * only once.
+	 * @type {Boolean}
+	 */
+	_gaInitialized: false,
+	get gaInitialized() {
+		return Polymer.GoogleAnalyticsTrackerBehavior._gaInitialized;
 	},
 
 	/**
@@ -37,7 +36,7 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		this._setGaInitialized(true);
+		Polymer.GoogleAnalyticsTrackerBehavior._gaInitialized = true;
 
 		ga('create', accountId, 'auto', {
 			allowLinker: true,
