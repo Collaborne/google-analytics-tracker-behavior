@@ -104,12 +104,12 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 	 *
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/events
 	 */
-	gaTrackEvent: function(category, action, label) {
+	gaTrackEvent: function(category, action, label, value) {
 		if (!this.gaInitialized) {
 			throw new Error('Google Analytics is not initialized. Call first gaCreate()');
 		}
 
-		ga('send','event', category, action, label);
+		ga('send','event', category, action, label, value);
 	}
 };
 
