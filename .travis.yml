@@ -15,11 +15,10 @@ before_install:
 - "if [ -d node_modules ] && [ x$(cat node_modules/.last-node-version 2>/dev/null) != x$(node -e 'console.log(process.version)') ]; then npm rebuild && node -e 'console.log(process.version)' > node_modules/.last-node-version; fi"
 before_script:
 - npm install web-component-tester bower polylint
-- bower install
-- polylint
-- export PATH=$PWD/node_modules/.bin:$PATH
+- $(npm bin)/bower install
+- $(npm bin)/polylint
 script:
-- xvfb-run wct
-after_success: '[ ${TRAVIS_PULL_REQUEST} = "false" ] && [ ${TRAVIS_BRANCH} = "master" ] && bower install -s https://${GH_TOKEN}@github.com/Collaborne/collaborne-build-tools.git && bower_components/collaborne-build-tools/gpages_build.sh Collaborne info@collaborne.com'
+- xvfb-run $(npm bin)/wct
+after_success: '[ ${TRAVIS_PULL_REQUEST} = "false" ] && [ ${TRAVIS_BRANCH} = "master" ] && $(npm bin)/bower install -s https://${GH_TOKEN}@github.com/Collaborne/collaborne-build-tools.git && bower_components/collaborne-build-tools/gpages_build.sh Collaborne info@collaborne.com'
 env:
   secure: M8woODI+6EJYAS+gGLBtyeqdbRuNED08BdP/JU1aqJltvCSPf7Sd428tgVWKIHNyosn3MCNfsLyE3CWRKmmhCsXdA+Hf/Z3J5i/lIh3o3e7JCGb+sRD3Ea6G/2NWup3JpYOAb+bI64h3YK5Dhsm6HIRL5jdI8bmGjmcWZLfimbkNd007sOoDSzFk1JTrBxsLVcZn3cAtcfrgWWyH+qh53qGfO76IXLbqXpANXWwiT96EpUNjp6JSKkVXcepzKXhnDljw0kXDPtxB7uaRO1kOY7TXQqQqEAmizo7TD3gEnxlSEERiZ0KgCKtHKoPFir9SvgSz9IfXZdSGnCjK9O4LkFwz+1mc+9qXCOOgM+7R6VEyTxMSasriBDewSnzjFEPXqMVu2VWQUmTDlnAgk36nq4wKzvmxDBo1wM5wQiGkzHNvosdAyJ7MMR5ps2l3n4VKNg/ERvwtfuHkEmI/oQBtioL2ot8n1zpxyNB9XHFml35SaoocE2a+j2XprW8dgroFb6R4f9ts/37XX9gk02OXQM1BL92iu2rsO4xHXo4Ugc++5066Oko2AzIzEu19wxtdCTntjWTVLDtkZavsUhabV/+cOysz+tafWmnqaG6AatJgZDsQ3vTOiV7L6PD45gvOLz0YGx3QR27NOluzcma4o8P8BLmotkJGTynfGFwyOkc=
