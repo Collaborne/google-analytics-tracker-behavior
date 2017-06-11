@@ -3,7 +3,7 @@
   "authors": [
     "collaborne"
   ],
-  "description": "Behavior to track page interactions to Google Analytics (Polymer 1.x)",
+  "description": "Behavior to track page interactions to Google Analytics (Polymer)",
   "main": "google-analytics-tracker-behavior.html",
   "keywords": [
     "web-components",
@@ -17,15 +17,13 @@
     "**/.*"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^2.0.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "paper-styles": "PolymerElements/paper-styles#^1.0.0",
-    "paper-input": "PolymerElements/paper-input#^1.0.0",
-    "paper-button": "PolymerElements/paper-button#^1.0.0",
-    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
-    "web-component-tester": "*",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0",
+    "paper-input": "PolymerElements/paper-input#^2.0.0",
+    "paper-button": "PolymerElements/paper-button#^2.0.0",
+    "web-component-tester": "*"
   }
 }
