@@ -1,7 +1,4 @@
-_[Demo and API Docs](http://collaborne.github.io/google-analytics-tracker-behavior)_
-
-
-google-analytics-tracker-behavior [![Bower version](https://badge.fury.io/bo/google-analytics-tracker-behavior.svg)](http://badge.fury.io/bo/google-analytics-tracker-behavior) [![Travis state](https://travis-ci.org/Collaborne/google-analytics-tracker-behavior.svg?branch=master)](https://travis-ci.org/Collaborne/google-analytics-tracker-behavior)
+google-analytics-tracker-behavior [![Bower version](https://badge.fury.io/bo/google-analytics-tracker-behavior.svg)](http://badge.fury.io/bo/google-analytics-tracker-behavior) [![Travis state](https://travis-ci.org/Collaborne/google-analytics-tracker-behavior.svg?branch=master)](https://travis-ci.org/Collaborne/google-analytics-tracker-behavior) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Collaborne/google-analytics-tracker-behavior)
 =========
 
 Behavior to track page interactions to Google Analytics. The web components are built with [Polymer](https://www.polymer-project.org).
