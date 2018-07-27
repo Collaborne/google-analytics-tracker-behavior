@@ -39,9 +39,9 @@ Polymer.GoogleAnalyticsTrackerBehavior = {
 		Polymer.GoogleAnalyticsTrackerBehavior._gaInitialized = true;
 
 		ga('create', accountId, 'auto', {
-			allowLinker: true,
-			anonymizeIp: true
+			allowLinker: true
 		});
+		ga('set','anonymizeIp',true);
 	},
 
 	/**
